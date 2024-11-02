@@ -1,1 +1,1 @@
-# Simulator for in-person [Liar's Game](https://liarsbar.wiki/)
+# Simulator for in-person [Liar's Bar](https://liarsbar.wiki/)
