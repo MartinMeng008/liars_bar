@@ -51,6 +51,8 @@ def main(num_players: int = 3, sleep_time=1) -> None:
     time.sleep(sleep_time)
     print('The deck consists of 6 queens, 6 kings, 6 aces, and 2 jokers (wild cards)')
     time.sleep(sleep_time)
+    # print('If you call a liar on a single true ghost card, everyone on the table makes a shoot')
+    # ghost_mode = input('Do you want to play with ghost card? (y/n) ')
     names = []
     num_players = int(input('Enter the number of players: '))
     for i in range(num_players):
@@ -72,21 +74,23 @@ def main(num_players: int = 3, sleep_time=1) -> None:
             time.sleep(sleep_time)
             player_status: str = ', '.join([f'{p.name} [{p.get_status()}]' for p in players])
             which_player = str(input(f"Who should make the shoot? ({player_status}) "))
-            player = None
-            for p in players:
-                if p.name == which_player:
-                    player = p
-                    break
-            assert player is not None, 'Player not found'
-            is_dead = player.shoot()
-            time.sleep(sleep_time)
-            print(f'{player.name} made a shoot')
-            time.sleep(sleep_time)
-            if is_dead:
-                print(f'Player {which_player} is dead')
-                players.remove(player)
-            else:
-                print(f'Player {which_player} is alive')
+            which_players = which_player.split(',')
+            for shoot_player in which_players:
+                player = None
+                for p in players:
+                    if p.name == shoot_player:
+                        player = p
+                        break
+                assert player is not None, 'Player not found'
+                is_dead = player.shoot()
+                time.sleep(sleep_time)
+                print(f'{player.name} made a shoot')
+                time.sleep(sleep_time)
+                if is_dead:
+                    print(f'Player {which_player} is dead')
+                    players.remove(player)
+                else:
+                    print(f'Player {which_player} is alive')
             time.sleep(sleep_time)
         print('==== Game Over ====')
         print(f'Winner is {players[0].name}!!')
