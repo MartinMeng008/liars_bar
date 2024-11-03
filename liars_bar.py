@@ -91,6 +91,8 @@ def main(num_players: int = 3, sleep_time=1) -> None:
             player_status: str = ', '.join([f'{p.name} [{p.get_status()}]' for p in players])
             which_player = str(input(f"Who should make the shoot? ({player_status}) "))
             which_players = which_player.split(',')
+            # remove any leading or trailing whitespaces
+            which_players = [p.strip() for p in which_players]
             for shoot_player in which_players:
                 player = None
                 for p in players:
@@ -113,11 +115,15 @@ def main(num_players: int = 3, sleep_time=1) -> None:
         Leaderboard[players[0].name] += 1
         time.sleep(sleep_time)
         play_again = input('Do you want to play again? (y/n) ')
-    print('==== Leaderboard ====')
+    print('==== Final Leaderboard ====')
     # Sort the leaderboard by score
     Leaderboard = dict(sorted(Leaderboard.items(), key=lambda x: x[1], reverse=True))
     for name, score in Leaderboard.items():
         print(f'{name}: {score}')
+    time.sleep(sleep_time)
+    print('================')
+    print(f'Congrats to {list(Leaderboard.keys())[0]}!!')
+    print('================')
 
 
 if __name__ == '__main__':
