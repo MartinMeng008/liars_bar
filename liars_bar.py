@@ -121,9 +121,13 @@ def main(num_players: int = 3, sleep_time=1) -> None:
     for name, score in Leaderboard.items():
         print(f'{name}: {score}')
     time.sleep(sleep_time)
-    print('================')
-    print(f'Congrats to {list(Leaderboard.keys())[0]}!!')
-    print('================')
+    print('================================')
+    winners = [name for name, score in Leaderboard.items() if score == list(Leaderboard.values())[0]]
+    if len(winners) == 1:
+        print(f'Congrats to the winner {winners[0]}!!')
+    else:
+        print(f"Congrats to the winners {', '.join(winners)}!!")
+    print('================================')
 
 
 if __name__ == '__main__':
