@@ -21,19 +21,19 @@ Upon launching the program, the simulator will guide you through each step of th
 ### Initial Setup
 Enter the number of players and each player's name.
 
-[initial_setup](figs/initial_setup.png)
+![initial_setup](figs/initial_setup.png)
 
 ### Player Turns
 - For each iteration, you'll need to enter the name of the player taking a shot.
 - Example:
-[one_player_shot](figs/one_player_shot.png)
+![one_player_shot](figs/one_player_shot.png)
 
 ### Ghost Card Option
 - If your game variation includes a "ghost card" that allows multiple players to take shots in a single round, enter all relevant players' names, separated by commas.
 
 - Example:
 
-[two_player_shot](figs/two_players_shot.png)
+![two_player_shot](figs/two_players_shot.png)
 
 # Good luck on the table!
 Enjoy the game. May the best player wins!
