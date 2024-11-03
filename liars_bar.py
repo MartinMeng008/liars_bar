@@ -1,8 +1,17 @@
 # Description: A program that simulates the Liars Bar game
+# Author: Qian Meng
+# Email: martinmq99@gmail.com
+# Date: 2024-11-02
+# Version: 1.0
+# Usage: python liars_bar.py
 
-import argparse
+# Todo:
+# 1. Add final leaderboard (done)
+
 import random
 import time
+
+DEBUG = False
 
 class Player:
     """A class that represents a player in the Liars Bar game
@@ -55,15 +64,22 @@ def main(num_players: int = 3, sleep_time=1) -> None:
     # ghost_mode = input('Do you want to play with ghost card? (y/n) ')
     names = []
     num_players = int(input('Enter the number of players: '))
+    Leaderboard = {}
     for i in range(num_players):
         name = input(f'Enter player {i+1} name: ')
         names.append(name)
+        Leaderboard[name] = 0
     table_cards = ['Q', 'K', 'A']
     play_again = 'y'
     while play_again == 'y':
         players = [Player(names[i]) for i in range(num_players)]
         num_round = 1
         while len(players) > 1:
+            if DEBUG:
+                sleep_time = 0
+                print('==== Players ====')
+                for player in players:
+                    print(f'{player.name} fatal shot: {player.fatal_shoot}')
             table_card = random.choice(table_cards)
             print(f'==== Round {num_round} ====')
             num_round += 1
@@ -87,16 +103,19 @@ def main(num_players: int = 3, sleep_time=1) -> None:
                 print(f'{player.name} made a shoot')
                 time.sleep(sleep_time)
                 if is_dead:
-                    print(f'Player {which_player} is dead')
+                    print(f'Player {player.name} is dead')
                     players.remove(player)
                 else:
-                    print(f'Player {which_player} is alive')
+                    print(f'Player {player.name} is alive')
             time.sleep(sleep_time)
         print('==== Game Over ====')
         print(f'Winner is {players[0].name}!!')
+        Leaderboard[players[0].name] += 1
         time.sleep(sleep_time)
         play_again = input('Do you want to play again? (y/n) ')
-
+    print('==== Leaderboard ====')
+    for name, score in Leaderboard.items():
+        print(f'{name}: {score}')
 
 
 if __name__ == '__main__':
