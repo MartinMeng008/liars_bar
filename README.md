@@ -26,6 +26,7 @@ Enter the number of players and each player's name.
 ### Player Turns
 - For each iteration, you'll need to enter the name of the player taking a shot.
 - Example:
+  
 ![one_player_shot](figs/one_player_shot.png)
 
 ### Ghost Card Option
