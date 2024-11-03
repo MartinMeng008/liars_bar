@@ -114,6 +114,8 @@ def main(num_players: int = 3, sleep_time=1) -> None:
         time.sleep(sleep_time)
         play_again = input('Do you want to play again? (y/n) ')
     print('==== Leaderboard ====')
+    # Sort the leaderboard by score
+    Leaderboard = dict(sorted(Leaderboard.items(), key=lambda x: x[1], reverse=True))
     for name, score in Leaderboard.items():
         print(f'{name}: {score}')
 
