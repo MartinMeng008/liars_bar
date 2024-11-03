@@ -36,4 +36,4 @@ Enter the number of players and each player's name.
 ![two_player_shot](figs/two_players_shot.png)
 
 # Good luck on the table!
-Enjoy the game. May the best player wins!
+Enjoy the game. May the best player win!
