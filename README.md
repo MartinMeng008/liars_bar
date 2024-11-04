@@ -30,8 +30,7 @@ Enter the number of players and each player's name.
 ![one_player_shot](figs/one_player_shot.png)
 
 ### Ghost Card Option
-- If your game variation includes a "ghost card" that allows multiple players to take shots in a single round, enter all relevant players' names, separated by commas.
-
+- If your game includes a "ghost card" that allows multiple players to take shots in a single round, enter all relevant players' names, separated by commas.
 - Example:
 
 ![two_player_shot](figs/two_players_shot.png)
