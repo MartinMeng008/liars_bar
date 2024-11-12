@@ -7,6 +7,7 @@
 
 # Todo:
 # 1. Add final leaderboard (done)
+# 2. Handle invalid names by prompting again instead of exception
 
 import random
 import time
