@@ -8,11 +8,30 @@ This repository provides the code support for playing the game liar's bar in per
 
 This code requires python > 3 and has been tested on python 3.8.1
 
+### Requirem packages
+- pygame
+- moviepy
+- ffmpeg
+- argparse
+
+To install the required packages, run the following command:
+
+```shell
+pip install pygame moviepy argparse
+sudo apt install ffmpeg
+```
+
 ## Usage
 from `[parent_dir_of_liars_bar]/liars_bar]`, run the following command:
 
 ```shell
 python liars_bar.py
+```
+
+Optionally, you can ask the simulator to play videos of the player shooting providing the following command:
+
+```shell
+python liars_bar.py --video
 ```
 
 ## Instructions
